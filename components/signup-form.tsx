@@ -49,7 +49,8 @@ export default function SignupForm() {
     }
   };
   const handleChangePhoneNumber = (text: string) => {
-    setPhoneNumber(text);
+    const numericOnly = text.replace(/\D/g, "").slice(0, 10);
+    setPhoneNumber(numericOnly);
     setError("");
   };
   return (
@@ -61,11 +62,13 @@ export default function SignupForm() {
         value={phoneNumber}
         onChangeText={handleChangePhoneNumber}
         keyboardType="phone-pad"
-        maxLength={10}
+        maxLength={15}
         errorMessage={error}
         leftIcon={<Text className="mr-1">+91</Text>}
         autoFocus
-        inputMode="numeric"
+        inputMode="tel"
+        textContentType="telephoneNumber"
+        autoComplete="tel"
       />
       <Button
         title="Proceed"

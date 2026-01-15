@@ -212,6 +212,7 @@ export default function OtpVerification() {
                   secureTextEntry
                   textContentType="oneTimeCode"
                   autoComplete="sms-otp"
+                  autoFocus={index === 0}
                 />
               ))}
             </View>
