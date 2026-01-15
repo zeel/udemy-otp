@@ -64,6 +64,8 @@ export default function SignupForm() {
         maxLength={10}
         errorMessage={error}
         leftIcon={<Text className="mr-1">+91</Text>}
+        autoFocus
+        inputMode="numeric"
       />
       <Button
         title="Proceed"
