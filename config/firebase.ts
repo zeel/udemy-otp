@@ -6,14 +6,13 @@ import { getReactNativePersistence } from "@firebase/auth/dist/rn/index.js";
 import { Platform } from "react-native";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCFkBHOsmSkFAnMV91e0wgDQkqP_nlsLaw",
-  authDomain: "zeel1-a0b24.firebaseapp.com",
-  databaseURL:
-    "https://zeel1-a0b24-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "zeel1-a0b24",
-  storageBucket: "zeel1-a0b24.appspot.com",
-  messagingSenderId: "739459855039",
-  appId: "1:739459855039:web:25ee801738fd70a12a8c0a",
+  apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.EXPO_PUBLIC_FIREBASE_DATABASE_URL,
+  projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
 };
 
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
